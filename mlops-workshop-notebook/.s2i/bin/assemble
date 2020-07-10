@@ -11,7 +11,7 @@ pip uninstall -y dask
 /opt/app-root/builder/assemble
 
 
-curl https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux.tar.gz | tar -xz -C /opt/app-root/bin oc
-curl https://mirror.openshift.com/pub/openshift-v4/clients/pipeline/latest/tkn-linux-amd64-0.9.0.tar.gz | tar -xz -C /opt/app-root/bin tkn
+curl -s https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux.tar.gz | tar -xz -C /opt/app-root/bin oc
+curl -s https://mirror.openshift.com/pub/openshift-v4/clients/pipeline/latest/tkn-linux-amd64-0.9.0.tar.gz | tar -xz -C /opt/app-root/bin tkn
 
 fix-permissions /opt/app-root
