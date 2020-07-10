@@ -6,11 +6,12 @@ set -eo pipefail
 
 # Execute original assemble script.
 
+pip uninstall -y dask
+
 /opt/app-root/builder/assemble
 
-pip uninstall -y dask mlflow
 
-(cd /opt/app-root/bin && curl https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux.tar.gz | tar xz - oc)
-(cd /opt/app-root/bin && curl https://mirror.openshift.com/pub/openshift-v4/clients/pipeline/latest/tkn-linux-amd64-0.9.0.tar.gz | tar xz - tkn)
+curl https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux.tar.gz | tar -xz -C /opt/app-root/bin oc
+curl https://mirror.openshift.com/pub/openshift-v4/clients/pipeline/latest/tkn-linux-amd64-0.9.0.tar.gz | tar -xz -C /opt/app-root/bin tkn
 
 fix-permissions /opt/app-root
